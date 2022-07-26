@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bazi-calculator/static/css/main.5f7daf83.css",
-    "main.js": "/bazi-calculator/static/js/main.831fcb08.js",
+    "main.js": "/bazi-calculator/static/js/main.73050071.js",
     "static/media/pexels-angela-roma-7364202.jpg": "/bazi-calculator/static/media/pexels-angela-roma-7364202.ff35fce986bb17374872.jpg",
     "static/media/pexels-angela-roma-7363747.jpg": "/bazi-calculator/static/media/pexels-angela-roma-7363747.2c7710b0946cc1c7fc6e.jpg",
     "static/media/pexels-karolina-grabowska-4041357.jpg": "/bazi-calculator/static/media/pexels-karolina-grabowska-4041357.3a5127f63bd7afe7343c.jpg",
@@ -10,10 +10,10 @@
     "static/media/legend.png": "/bazi-calculator/static/media/legend.a1352235d8cdab0e9039.png",
     "index.html": "/bazi-calculator/index.html",
     "main.5f7daf83.css.map": "/bazi-calculator/static/css/main.5f7daf83.css.map",
-    "main.831fcb08.js.map": "/bazi-calculator/static/js/main.831fcb08.js.map"
+    "main.73050071.js.map": "/bazi-calculator/static/js/main.73050071.js.map"
   },
   "entrypoints": [
     "static/css/main.5f7daf83.css",
-    "static/js/main.831fcb08.js"
+    "static/js/main.73050071.js"
   ]
 }
