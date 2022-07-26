@@ -2,7 +2,6 @@
   "name": "bazi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://loisiling.github.io/bazi-calculator",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -20,6 +19,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://loisiling.github.io/bazi-calculator",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
