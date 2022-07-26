@@ -13,7 +13,7 @@ import {
 
 function App() {
   return (
-    <Router basename='https://loisiling.github.io/bazi-calculator'>
+    <Router basename='/bazi-calculator'>
       <Routes>
         <Route exact path="/results/:groomBday/:brideBday/:reportDuration/:groomName/:brideName" element={<Results/>} />
         <Route exact path="/" element={<HomePage />} />
