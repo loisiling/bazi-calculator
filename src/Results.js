@@ -11,15 +11,21 @@ import legend from "./pictures/legend.png"
 import example from "./pictures/example.png"
 import image3 from "./pictures/pexels-karolina-grabowska-4041357.jpg"
 import image4 from "./pictures/pexels-alena-koval-961402.jpg"
+import auspiciousHour from './auspicioushour';
+
 function Results() {
     const { groomBday, brideBday, reportDuration, groomName, brideName } = useParams()
 
     const results = calculator(groomBday, brideBday, reportDuration)
+    const auspiciousHourList = auspiciousHour();
+    // console.log(auspiciousHourList);
 
     let sortedResultsVeryGoodDays = [];
     let sortedResultsVeryBadDays = [];
     let sortedResultsOpenDays = [];
     let sortedResultsAverageDays = [];
+    let auspiciousHourVeryGoodDays = [];
+    let auspiciousHourOpenDays = [];
 
     // let month1=[];let month2=[]; let month3=[];let month4=[];let month5=[];let month6=[];
     // let month7=[];let month8=[]; let month9=[];let month10=[];let month11=[];let month12=[];   
@@ -29,6 +35,8 @@ function Results() {
         sortedResultsVeryBadDays.push([])
         sortedResultsOpenDays.push([])
         sortedResultsAverageDays.push([])
+        auspiciousHourVeryGoodDays.push([])
+        auspiciousHourOpenDays.push([])
     }
 
     let currentMonth = new Date().getMonth(); // July = 6
@@ -52,8 +60,14 @@ function Results() {
             arrayIndex = monthsThatPassedLastYear + x.month
         }
         sortedResultsVeryGoodDays[arrayIndex].push(dateValue)
+        let auspiciousHourOfRecord = auspiciousHourList.filter(obj=> {return obj.day == x.dayChinese})
+        let auspiciousRecord = [dateValue, auspiciousHourOfRecord[0].auspicious]
+        auspiciousHourVeryGoodDays[arrayIndex].push(auspiciousRecord);
     })
 
+    // console.log("very good days", results.finalVeryGoodDays);
+    // console.log("sorted results", sortedResultsVeryGoodDays);
+    // console.log("auspicious hour very good days", auspiciousHourVeryGoodDays)
 
     results.finalOpenDays.forEach((x) => {
         let monthValue = x.month
@@ -73,7 +87,12 @@ function Results() {
             arrayIndex = monthsThatPassedLastYear + x.month
         }
         sortedResultsOpenDays[arrayIndex].push(dateValue)
+        let auspiciousHourOfRecordOpen = auspiciousHourList.filter(obj=> {return obj.day == x.dayChinese})
+        let auspiciousRecordOpen = [dateValue, auspiciousHourOfRecordOpen[0].auspicious]
+        auspiciousHourOpenDays[arrayIndex].push(auspiciousRecordOpen);
     })
+
+    // console.log("auspicious hour open days", auspiciousHourOpenDays);
 
     results.finalBadDays.forEach((x) => {
         let monthValue = x.month
@@ -130,7 +149,8 @@ function Results() {
             monthValue = 0
         }
         finalCalendar.push(<Calendar12Months year={yearValue} month={monthValue} index={i} veryGoodDays={sortedResultsVeryGoodDays}
-            veryBadDays={sortedResultsVeryBadDays} openDays={sortedResultsOpenDays} averageDays={sortedResultsAverageDays} />)
+            veryBadDays={sortedResultsVeryBadDays} openDays={sortedResultsOpenDays} averageDays={sortedResultsAverageDays} 
+            auspiciousHourGood={auspiciousHourVeryGoodDays} auspiciousHourOpen={auspiciousHourOpenDays}/>)
     }
 
     return (

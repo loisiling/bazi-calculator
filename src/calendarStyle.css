@@ -308,3 +308,31 @@
       align: center;
     }
   }
+
+  .auspiciousHour{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    /* font-weight: bold; */
+  }
+
+  .table1{
+    border: 2px solid black;
+    width: 100%;
+    height: 10%;
+  }
+
+  th {
+    border-bottom: 1px solid black;
+  }
+
+  td {
+    border-bottom: 1px solid black;
+  }
+  
+  .goodhour {
+    /* background-color: #F08080; */
+  }
+
+  .openHour {
+    /* background-color: #ce8b8b; */
+  }
