@@ -208,7 +208,7 @@ function Results() {
                     <br></br>
                     <br></br>
                     If you would like to have a personal Bazi-reading done by our 
-                    master, you can check out: www.jeffchiabazi.com
+                    master, you can revert to our email for more information.
                 </div>
             </div>
             <div>
