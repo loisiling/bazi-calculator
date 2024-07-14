@@ -26,7 +26,9 @@ export default function bazi(groomBday, brideBday, reportDuration) {
     const groomAnimalInChinese = lunarjs.solar2lunar(parseInt(groomBday.substring(0,4)), parseInt(groomBday.substring(5,7)), parseInt(groomBday.substring(5,7))).zodiac;
     const brideAnimalInChinese = lunarjs.solar2lunar(parseInt(brideBday.substring(0,4)), parseInt(brideBday.substring(5,7)), parseInt(brideBday.substring(5,7))).zodiac;
 
+    console.log("Groom's Animal in Chinese")
     console.log(groomAnimalInChinese);
+    console.log("Bride's Animal in Chinese")
     console.log(brideAnimalInChinese);
 
     //const groomAnimalInChinese = (Solar.fromYmd(groomBday.substring(0,4), groomBday.substring(5,7), groomBday.substring(8,10)).getLunar().toFullString().substring(13, 14));
