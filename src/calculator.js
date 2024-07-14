@@ -1,3 +1,4 @@
+import lunarjs from "@tenado/lunarjs";
 const LunarCalendar = require('lunar-calendar');
 const ChineseYear = require('chinese-year');
 const lodash = require('lodash');
@@ -21,8 +22,15 @@ export default function bazi(groomBday, brideBday, reportDuration) {
         { chi: "亥", eng: "pig", chi2: "猪" },
     ]
 
-    const groomAnimalInChinese = (Solar.fromYmd(groomBday.substring(0,4), groomBday.substring(5,7), groomBday.substring(8,10)).getLunar().toFullString().substring(13, 14));
-    const brideAnimalInChinese = (Solar.fromYmd(brideBday.substring(0,4), brideBday.substring(5,7), brideBday.substring(8,10)).getLunar().toFullString().substring(13, 14));
+
+    const groomAnimalInChinese = lunarjs.solar2lunar(parseInt(groomBday.substring(0,4)), parseInt(groomBday.substring(5,7)), parseInt(groomBday.substring(5,7))).zodiac;
+    const brideAnimalInChinese = lunarjs.solar2lunar(parseInt(brideBday.substring(0,4)), parseInt(brideBday.substring(5,7)), parseInt(brideBday.substring(5,7))).zodiac;
+
+    console.log(groomAnimalInChinese);
+    console.log(brideAnimalInChinese);
+
+    //const groomAnimalInChinese = (Solar.fromYmd(groomBday.substring(0,4), groomBday.substring(5,7), groomBday.substring(8,10)).getLunar().toFullString().substring(13, 14));
+    //const brideAnimalInChinese = (Solar.fromYmd(brideBday.substring(0,4), brideBday.substring(5,7), brideBday.substring(8,10)).getLunar().toFullString().substring(13, 14));
 
     //Get current month of 2022
     let currentMonth = new Date().getMonth();
